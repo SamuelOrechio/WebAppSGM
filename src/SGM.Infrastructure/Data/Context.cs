@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGC.AplicationCore.Data
+namespace SGM.Infrastructure
 {
    public class Context : DbContext
         {

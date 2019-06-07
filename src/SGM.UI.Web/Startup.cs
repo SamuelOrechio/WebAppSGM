@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using SGM.UI.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SGC.AplicationCore.Data;
+using SGM.Infrastructure;
 
 namespace SGM.UI.Web
 {

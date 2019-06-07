@@ -14,8 +14,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\SGC.AplicationCore\SGC.AplicationCore.csproj" />
     <ProjectReference Include="..\SGM.AplicationCore\SGM.AplicationCore.csproj" />
+    <ProjectReference Include="..\SGM.Infrastructure\SGM.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
