@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGM.Infrastructure
+namespace SGM.Infrastructure.Data
 {
    public class Context : DbContext
         {
@@ -20,6 +20,8 @@ namespace SGM.Infrastructure
         {
             modelBuilder.Entity<Pessoa>().ToTable("Pessoa");
             modelBuilder.Entity<PessoaTipo>().ToTable("PessoaTipo");
+
+            modelBuilder.Entity<PessoaTipo>().Property(e => e.Descricao).HasColumnType("Varchar(50").IsRequired();
         }
     }
 }

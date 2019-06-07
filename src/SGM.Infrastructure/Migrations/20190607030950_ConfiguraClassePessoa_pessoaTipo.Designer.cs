@@ -8,8 +8,8 @@ using SGM.Infrastructure.Data;
 namespace SGM.Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20190607024153_Inicial")]
-    partial class Inicial
+    [Migration("20190607030950_ConfiguraClassePessoa_pessoaTipo")]
+    partial class ConfiguraClassePessoa_pessoaTipo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,7 +40,9 @@ namespace SGM.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descricao");
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("Varchar(50");
 
                     b.HasKey("PessoaTipoId");
 
@@ -50,7 +52,7 @@ namespace SGM.Infrastructure.Migrations
             modelBuilder.Entity("SGM.AplicationCore.Entity.Pessoa", b =>
                 {
                     b.HasOne("SGM.AplicationCore.Entity.PessoaTipo", "PessoaTipo")
-                        .WithMany()
+                        .WithMany("Pessoas")
                         .HasForeignKey("PessoaTipoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

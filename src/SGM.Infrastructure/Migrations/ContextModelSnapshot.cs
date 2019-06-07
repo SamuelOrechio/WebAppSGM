@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SGM.Infrastructure;
+using SGM.Infrastructure.Data;
 
 namespace SGM.Infrastructure.Migrations
 {
@@ -39,7 +38,9 @@ namespace SGM.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descricao");
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("Varchar(50");
 
                     b.HasKey("PessoaTipoId");
 
@@ -49,7 +50,7 @@ namespace SGM.Infrastructure.Migrations
             modelBuilder.Entity("SGM.AplicationCore.Entity.Pessoa", b =>
                 {
                     b.HasOne("SGM.AplicationCore.Entity.PessoaTipo", "PessoaTipo")
-                        .WithMany()
+                        .WithMany("Pessoas")
                         .HasForeignKey("PessoaTipoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
