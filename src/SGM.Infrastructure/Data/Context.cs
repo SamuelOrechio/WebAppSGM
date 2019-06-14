@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SGM.AplicationCore.Entity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SGM.Infrastructure.Data
 {
-   public class Context : DbContext
+    public class Context : DbContext
         {
         public Context(DbContextOptions<Context> options) : base (options)
         {

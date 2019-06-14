@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SGM.AplicationCore.Entity
+﻿namespace SGM.AplicationCore.Entity
 {
-  public  class Pessoa
+    public  class Pessoa
     {
         public Pessoa()
         {
